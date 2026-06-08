@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SOFTFISIO.DATA/SOFTFISIO.DATA.csproj" />
+  <Project Path="SOFTFISIO.WEB/SOFTFISIO.WEB.csproj" />
+</Solution>
