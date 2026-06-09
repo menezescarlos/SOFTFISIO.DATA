@@ -169,7 +169,6 @@ Módulos em construção:
 
 * Ciência da Computação
 * MBA em Data Science
-* Estudante de Direito
 * Desenvolvedor .NET e SQL Server
 
 ---
