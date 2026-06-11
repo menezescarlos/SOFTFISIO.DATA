@@ -10,6 +10,11 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IRepositoryEmpresa, RepositoryEmpresa>();
 
 builder.Services.AddScoped<IRepositoryCooperativa, RepositoryCooperativa>();
+builder.Services.AddScoped<IRepositoryCooperativa, RepositoryCooperativa>();
+builder.Services.AddScoped<IRepositoryAgendamento, RepositoryAgendamento>();
+builder.Services.AddScoped<IRepositoryCooperativa, RepositoryCooperativa>();
+builder.Services.AddScoped<IRepositoryCooperativa, RepositoryCooperativa>();
+
 
 var app = builder.Build();
 

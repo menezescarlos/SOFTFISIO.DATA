@@ -1,0 +1,54 @@
+﻿@model IEnumerable<SOFTFISIO.DATA.Models.Agendamento>
+
+@{
+    ViewData["Title"] = "Agendamento";
+
+}
+
+<h3>Agenda de Atendimento</h3>
+
+
+<table class="table table-striped">
+
+    <thead>
+
+        <tr>
+
+            <th>Paciente</th>
+            <th>Funcionário</th>
+            <th>Procedimento</th>
+            <th>Data</th>
+            <th>Início</th>
+            <th>Fim</th>
+            <th>Status</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.IdPacienteNavigation?.Nome</td>
+
+                <td>@item.IdFuncionarioNavigation?.Nome</td>
+
+                <td>@item.IdProcedimentoNavigation?.NomeProcedimento</td>
+
+                <td>@item.DataAtendimento</td>
+
+                <td>@item.HoraInicio</td>
+
+                <td>@item.HoraFim</td>
+
+                <td>@item.Status</td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>
