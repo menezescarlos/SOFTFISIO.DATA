@@ -17,19 +17,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="10.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SOFTFISIO.DATA\SOFTFISIO.DATA.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\Equipamento\" />
-    <Folder Include="Views\Sala\" />
-    <Folder Include="Views\Prontuario\" />
-    <Folder Include="Views\Paciente\" />
-    <Folder Include="Views\Funcionario\" />
   </ItemGroup>
 
 </Project>

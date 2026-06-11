@@ -1,0 +1,73 @@
+﻿@model IEnumerable<SOFTFISIO.DATA.Models.Prontuario>
+
+@{
+    ViewData["Title"] = "Prontuario";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between mb-3">
+
+        <h3>Cadastro de Prontuario</h3>
+
+        <a asp-action="Create"
+           class="btn btn-primary">
+            Novo Prontuario
+        </a>
+
+    </div>
+
+    <table class="table table-striped table-bordered table-hover">
+
+        <thead class="table-dark">
+
+            <tr>
+                <th>ID</th>
+                <th>IdPaciente</th>
+                <th>IdEmpresa</th>
+                <th>EvolucaoClinicas</th>
+                <th>DataAbertura</th>
+                <th width="220">Ações</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>@item.IdProntuario</td>
+
+                    <td>@item.IdPaciente</td>
+
+                    <td>@item.IdEmpresa</td>
+
+                    <td>@item.EvolucaoClinicas</td>
+
+                    <td>@item.DataAbertura</td>
+
+                    <td>
+
+                        <div class="d-flex gap-2">
+
+                            <a asp-action="Details"
+                               asp-route-id="@item.IdProntuario"
+                               class="btn btn-info btn-sm">
+                                <i class="bi bi-eye"></i>
+                                Detalhes
+                            </a>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+</div>

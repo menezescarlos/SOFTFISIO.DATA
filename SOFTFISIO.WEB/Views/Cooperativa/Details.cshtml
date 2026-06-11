@@ -1,4 +1,123 @@
-﻿@page
-@model SOFTFISIO.WEB.Views.Cooperativa.DetailsModel
+﻿@model SOFTFISIO.DATA.Models.Cooperativa
+
 @{
+    ViewData["Title"] = "Detalhes da Cooperativa";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div id="area-impressao">
+
+            <div class="card-header bg-info text-white">
+                <h4>Detalhes da Cooperativa</h4>
+            </div>
+
+            <div class="card-body">
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-bold">Nome Cooperativa</label>
+                        <div class="form-control bg-light">
+                            @Model.NomeCooperativa
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-bold">CNPJ</label>
+                        <div class="form-control bg-light">
+                            @Model.CNPJ
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-4 mb-3">
+                        <label class="fw-bold">Telefone</label>
+                        <div class="form-control bg-light">
+                            @Model.Telefone
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="fw-bold">Email</label>
+                        <div class="form-control bg-light">
+                            @Model.Email
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="fw-bold">Contato</label>
+                        <div class="form-control bg-light">
+                            @Model.Contato
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr />
+
+                <div class="row">
+
+                    <div class="col-md-4 mb-3">
+                        <label class="fw-bold">Código da Empresa</label>
+                        <div class="form-control bg-light">
+                            @Model.IdEmpresa
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="fw-bold">Status</label>
+                        <div class="form-control bg-light">
+                            @Model.Ativa
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card-footer">
+
+            <a asp-action="Edit"
+               asp-route-id="@Model.IdEmpresa"
+               class="btn btn-warning">
+                Editar
+            </a>
+
+            <button type="button"
+                    class="btn btn-primary"
+                    onclick="imprimirEmpresa()">
+                Imprimir
+            </button>
+
+
+            <a asp-action="Index"
+               class="btn btn-secondary">
+                Voltar
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts{
+
+    <script>
+
+        function imprimirEmpresa() {
+
+            window.print();
+
+        }
+
+    </script>
+
 }

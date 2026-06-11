@@ -1,4 +1,96 @@
-﻿@page
-@model SOFTFISIO.WEB.Views.Cooperativa.EditModel
+﻿@model SOFTFISIO.DATA.Models.Cooperativa
+
 @{
+    ViewData["Title"] = "Editar Cooperativa";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-warning text-dark">
+            <h4>Editar Cooperativa</h4>
+        </div>
+
+        <div class="card-body">
+
+            <form asp-action="Edit">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <input type="hidden" asp-for="IdCooperativa" />
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="NomeCooperativa" class="form-label"></label>
+                        <input asp-for="NomeCooperativa" class="form-control" />
+                        <span asp-validation-for="NomeCooperativa" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="CNPJ" class="form-label"></label>
+                        <input asp-for="CNPJ" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="Email" class="form-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="Telefone" class="form-label"></label>
+                        <input asp-for="Telefone" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="Contato" class="form-label"></label>
+                        <input asp-for="Contato" class="form-control" />
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="IdEmpresa" class="form-label"></label>
+                        <input asp-for="IdEmpresa" class="form-control" />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Ativa" class="form-label"></label>
+                        <input asp-for="Ativa" class="form-control" />
+                    </div>
+
+                </div>
+
+
+                <div class="mt-4">
+
+                    <button type="submit" class="btn btn-warning">
+                        Atualizar
+                    </button>
+
+                    <a asp-action="Index" class="btn btn-secondary">
+                        Voltar
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
