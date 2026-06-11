@@ -1,3 +1,6 @@
+<img width="1920" height="1278" alt="screencapture-localhost-7216-2026-06-11-11_08_12" src="https://github.com/user-attachments/assets/e0811a7b-9d5e-430d-86ab-74062d8295de" />
+
+
 # 🏥 SOFTFISIO - Sistema de Gestão para Clínicas de Fisioterapia
 
 ## 📖 Sobre o Projeto
