@@ -24,4 +24,12 @@
     <ProjectReference Include="..\SOFTFISIO.DATA\SOFTFISIO.DATA.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Equipamento\" />
+    <Folder Include="Views\Sala\" />
+    <Folder Include="Views\Prontuario\" />
+    <Folder Include="Views\Paciente\" />
+    <Folder Include="Views\Funcionario\" />
+  </ItemGroup>
+
 </Project>

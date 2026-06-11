@@ -1,31 +1,195 @@
+/* ==========================================================
+   CONFIGURAÇÕES GERAIS DO ASP.NET MVC
+========================================================== */
+
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+    html {
+        font-size: 16px;
+    }
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #F4F7FA;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+/* ==========================================================
+   ACESSIBILIDADE E FOCO DOS CONTROLES
+========================================================== */
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 .1rem white, 0 0 0 .25rem #258cfb;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+/* ==========================================================
+   FORM FLOATING
+========================================================== */
+
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+/* ==========================================================
+   MENU SUPERIOR SOFTFISIO
+========================================================== */
+
+.navbar {
+    background: linear-gradient(90deg, #0F4C81, #1E88E5);
+    padding: 12px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.15);
+}
+
+.navbar-brand {
+    color: #FFF !important;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+    .navbar-brand:hover {
+        color: #D9EDF7 !important;
+    }
+
+.navbar-nav .nav-link {
+    color: rgba(255,255,255,.90) !important;
+    font-weight: 500;
+    padding: 10px 15px !important;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+    .navbar-nav .nav-link:hover {
+        background-color: rgba(255,255,255,.15);
+        transform: translateY(-2px);
+    }
+
+    .navbar-nav .nav-link.active {
+        background-color: rgba(255,255,255,.25);
+    }
+
+/* ==========================================================
+   DROPDOWN MENU
+========================================================== */
+
+.dropdown-menu {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.15);
+}
+
+.dropdown-item {
+    padding: 10px 15px;
+    transition: .3s;
+}
+
+    .dropdown-item:hover {
+        background-color: #EAF4FB;
+        color: #0F4C81;
+    }
+
+/* ==========================================================
+   INFORMAÇÕES DO USUÁRIO
+========================================================== */
+
+.usuario-logado {
+    color: #FFF;
+    font-size: .95rem;
+    font-weight: 500;
+}
+
+/* ==========================================================
+   BOTÃO SAIR
+========================================================== */
+
+.btn-sair {
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,.4);
+    color: #FFF;
+    transition: .3s;
+}
+
+    .btn-sair:hover {
+        background-color: #DC3545;
+        border-color: #DC3545;
+    }
+
+/* ==========================================================
+   CARDS DA DASHBOARD
+========================================================== */
+
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: .3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-3px);
+    }
+
+.card-header {
+    font-weight: 600;
+}
+
+/* ==========================================================
+   BOTÕES
+========================================================== */
+
+.btn {
+    border-radius: 10px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+
+/* ==========================================================
+   TABELAS
+========================================================== */
+
+.table {
+    margin-bottom: 0;
+}
+
+    .table thead {
+        background-color: #F8F9FA;
+    }
+
+/* ==========================================================
+   SOMBRAS PADRONIZADAS
+========================================================== */
+
+.shadow {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.10) !important;
+}
+
+/* ==========================================================
+   RODAPÉ
+========================================================== */
+
+.footer-softfisio {
+    background-color: #0F4C81;
+    color: white;
+    padding: 15px;
+    margin-top: 30px;
 }

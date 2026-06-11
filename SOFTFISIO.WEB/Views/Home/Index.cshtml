@@ -2,7 +2,208 @@
     ViewData["Title"] = "SOFTFISIO";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Bem Vindo - SoftFisio</h1>
-    <p>Suporte Técnico <a href="https://learn.microsoft.com/aspnet/core">Segurança e Tecnologia (11) 99999-0000</a>.</p>
+<div class="container-fluid">
+
+    <!-- Banner -->
+    <div class="card shadow-lg border-0 mb-4">
+        <div class="card-body bg-primary text-white text-center p-5">
+            <h1 class="display-5 fw-bold">SOFTFISIO</h1>
+            <p class="lead">
+                Sistema Integrado de Gestão para Clínicas e Profissionais de Fisioterapia
+            </p>
+            <p>
+                Controle de pacientes, agenda, atendimentos, financeiro e relatórios.
+            </p>
+        </div>
+    </div>
+
+    <!-- Indicadores -->
+    <div class="row mb-4">
+
+        <div class="col-md-3">
+            <div class="card shadow border-0 text-center">
+                <div class="card-body">
+                    <h5 class="text-primary">Pacientes</h5>
+                    <h2>1.245</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow border-0 text-center">
+                <div class="card-body">
+                    <h5 class="text-success">Atendimentos Hoje</h5>
+                    <h2>18</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow border-0 text-center">
+                <div class="card-body">
+                    <h5 class="text-warning">Agendamentos</h5>
+                    <h2>07</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow border-0 text-center">
+                <div class="card-body">
+                    <h5 class="text-danger">Convênios</h5>
+                    <h2>12</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Agenda e Resumo -->
+    <div class="row mb-4">
+
+        <div class="col-md-6">
+            <div class="card shadow border-0">
+                <div class="card-header bg-primary text-white">
+                    Agenda do Dia
+                </div>
+                <div class="card-body">
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Horário</th>
+                                <th>Paciente</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>08:00</td>
+                                <td>João Silva</td>
+                            </tr>
+                            <tr>
+                                <td>09:00</td>
+                                <td>Maria Oliveira</td>
+                            </tr>
+                            <tr>
+                                <td>10:00</td>
+                                <td>Pedro Santos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow border-0">
+                <div class="card-header bg-success text-white">
+                    Resumo Financeiro
+                </div>
+                <div class="card-body">
+
+                    <h5>Faturamento do Mês</h5>
+                    <h2 class="text-success">
+                        R$ 35.000,00
+                    </h2>
+
+                    <hr>
+
+                    <p>
+                        <strong>Recebimentos Pendentes:</strong>
+                        R$ 5.200,00
+                    </p>
+
+                    <p>
+                        <strong>Pagamentos Pendentes:</strong>
+                        R$ 2.100,00
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Atalhos -->
+    <div class="card shadow border-0 mb-4">
+        <div class="card-header bg-dark text-white">
+            Atalhos Rápidos
+        </div>
+
+        <div class="card-body">
+
+            <div class="row text-center">
+
+                <div class="col-md-2 mb-3">
+                    <a asp-controller="Paciente"
+                       asp-action="Create"
+                       class="btn btn-primary w-100 p-3">
+                        Novo Paciente
+                    </a>
+                </div>
+
+                <div class="col-md-2 mb-3">
+                    <a asp-controller="Agenda"
+                       asp-action="Create"
+                       class="btn btn-success w-100 p-3">
+                        Agendamento
+                    </a>
+                </div>
+
+                <div class="col-md-2 mb-3">
+                    <a asp-controller="Atendimento"
+                       asp-action="Create"
+                       class="btn btn-info w-100 p-3">
+                        Atendimento
+                    </a>
+                </div>
+
+                <div class="col-md-2 mb-3">
+                    <a asp-controller="Financeiro"
+                       asp-action="Index"
+                       class="btn btn-warning w-100 p-3">
+                        Financeiro
+                    </a>
+                </div>
+
+                <div class="col-md-2 mb-3">
+                    <a asp-controller="Convenio"
+                       asp-action="Index"
+                       class="btn btn-danger w-100 p-3">
+                        Convênios
+                    </a>
+                </div>
+
+                <div class="col-md-2 mb-3">
+                    <a asp-controller="Relatorio"
+                       asp-action="Index"
+                       class="btn btn-secondary w-100 p-3">
+                        Relatórios
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Avisos -->
+    <div class="card shadow border-0">
+        <div class="card-header bg-warning">
+            Avisos e Notificações
+        </div>
+
+        <div class="card-body">
+
+            <ul>
+                <li>3 pacientes aguardando retorno.</li>
+                <li>2 convênios próximos do vencimento.</li>
+                <li>5 pagamentos pendentes.</li>
+                <li>Aniversariantes do mês: 4 pacientes.</li>
+            </ul>
+
+        </div>
+    </div>
+
 </div>
