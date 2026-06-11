@@ -2,13 +2,15 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SOFTFISIO.DATA.INTERFACE;
 using SOFTFISIO.DATA.Models;
+using SOFTFISIO.DATA.REPOSITORY;
 
 
 namespace SOFTFISIO.WEB.Controllers
 {
     public class EmpresaController : Controller
     {
-        // Campo para o repositório de Contrato
+        // Campo privado para armazenar a instância do repositório de Empresa,
+        // que será utilizado para realizar as operações de banco de dados relacionadas à entidade Empresa.
         private readonly IRepositoryEmpresa _repository;
 
         // Injeção de dependência do repositório
@@ -25,14 +27,14 @@ namespace SOFTFISIO.WEB.Controllers
         }
 
         // GET
-        // Ação para exibir o formulário de criação de um novo contrato
+        // Ação para exibir o formulário de criação de um nova Empresa
         public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
-        // POST: Unidade/Create
+        // Ação para processar o formulário de criação de um nova Empresa
         public IActionResult Create(Empresa empresa)
         {
             if (ModelState.IsValid)
@@ -46,6 +48,7 @@ namespace SOFTFISIO.WEB.Controllers
         }
 
         // GET
+        // Ação para exibir o formulário de edição de um contrato existente, identificando-o por sua chave primária (PK)
         public IActionResult Edit(int id)
         {
             var empresa = _repository.SelecionarPorPK(id);
@@ -59,7 +62,8 @@ namespace SOFTFISIO.WEB.Controllers
         }
 
         [HttpPost]
-        // Ação para processar o formulário de edição de um contrato existente
+        // Ação para processar o formulário de edição de um contrato existente,
+        // identificando-o por sua chave primária (PK)
         public IActionResult Edit(Empresa empresa)
         {
             if (ModelState.IsValid)
@@ -71,7 +75,6 @@ namespace SOFTFISIO.WEB.Controllers
 
             return View(empresa);
         }
-
 
         // GET
         public IActionResult Delete(int id)
@@ -87,7 +90,7 @@ namespace SOFTFISIO.WEB.Controllers
         }
 
         [HttpPost]
-        // Ação para processar a confirmação de exclusão de um contrato
+        // Ação para processar a exclusão de um contrato existente, identificando-o por sua chave primária (PK)
         public IActionResult DeleteConfirmed(int IdEmpresa)
         {
             _repository.Exclusao(IdEmpresa);
@@ -95,5 +98,17 @@ namespace SOFTFISIO.WEB.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        // GET
+        public IActionResult Details(int id)
+        {
+            Empresa empresa = _repository.SelecionarPorPK(id);
+
+            if (empresa == null)
+            {
+                return NotFound();
+            }
+
+            return View(empresa);
+        }
     }
 }

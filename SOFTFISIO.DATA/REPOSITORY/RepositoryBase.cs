@@ -11,7 +11,7 @@ namespace SOFTFISIO.DATA.REPOSITORY
     {
         //Campo protegido para o contexto do Entity Framework, que será utilizado para realizar
         //as operações de banco de dados.
-        protected DATAFISIOContext _Contexto;
+        protected DATAFISIOContext _DATAFISIOContexto;
         public bool _SaveChanges = true;
 
         //Construtor para o RepositoryBase, que recebe um parâmetro opcional para determinar se
@@ -19,17 +19,17 @@ namespace SOFTFISIO.DATA.REPOSITORY
         public RepositoryBase(bool saveChanges = true)
         {
             _SaveChanges = saveChanges;
-            _Contexto = new DATAFISIOContext();
+            _DATAFISIOContexto = new DATAFISIOContext();
         }
 
         // Método para alterar um objeto no banco de dados. Ele marca o estado do objeto como modificado
         public T Alterar(T objeto)
         {
-            _Contexto.Entry(objeto).State = EntityState.Modified;
+            _DATAFISIOContexto.Entry(objeto).State = EntityState.Modified;
 
             if (_SaveChanges)
             {
-                _Contexto.SaveChanges();
+                _DATAFISIOContexto.SaveChanges();
             }
             return objeto;
         }
@@ -37,18 +37,18 @@ namespace SOFTFISIO.DATA.REPOSITORY
         // Implementação do método Dispose para liberar os recursos do contexto do Entity Framework.
         public void Dispose()
         {
-            _Contexto.Dispose();
+            _DATAFISIOContexto.Dispose();
         }
 
         // Método para excluir um objeto do banco de dados. Ele remove o objeto do conjunto
         // de entidades e salva as alterações se necessário.
         public void Excluir(T objeto)
         {
-            _Contexto.Set<T>().Remove(objeto);
+            _DATAFISIOContexto.Set<T>().Remove(objeto);
 
             if (_SaveChanges)
             {
-                _Contexto.SaveChanges();
+                _DATAFISIOContexto.SaveChanges();
             }
         }
 
@@ -64,11 +64,11 @@ namespace SOFTFISIO.DATA.REPOSITORY
         // Método para incluir um novo objeto no banco de dados. Ele adiciona o objeto ao conjunto
         public T Incluir(T objeto)
         {
-            _Contexto.Set<T>().Add(objeto);
+            _DATAFISIOContexto.Set<T>().Add(objeto);
 
             if (_SaveChanges)
             {
-                _Contexto.SaveChanges();
+                _DATAFISIOContexto.SaveChanges();
             }
             return objeto;
         }
@@ -76,20 +76,20 @@ namespace SOFTFISIO.DATA.REPOSITORY
         // Método para salvar as alterações no banco de dados. Ele chama o método SaveChanges do contexto   
         public void SaveChanges()
         {
-            _Contexto.SaveChanges();
+            _DATAFISIOContexto.SaveChanges();
         }
 
         // Método para selecionar um objeto do banco de dados com base em sua chave primária.
         // Ele utiliza o método Find do conjunto de entidades para localizar o objeto.
         public T SelecionarPorPK(params object[] variavel)
         {
-            return _Contexto.Set<T>().Find(variavel);
+            return _DATAFISIOContexto.Set<T>().Find(variavel);
         }
 
         // Método para selecionar todos os objetos do banco de dados. Ele retorna uma lista de objetos
         public List<T> SelecionarTodos()
         {
-            return _Contexto.Set<T>().ToList();
+            return _DATAFISIOContexto.Set<T>().ToList();
         }
 
         // Implementação do método SaveChanges da interface IRepositoryModel, que lança uma exceção

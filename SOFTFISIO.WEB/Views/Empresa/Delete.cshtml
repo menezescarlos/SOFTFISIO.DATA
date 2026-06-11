@@ -1,0 +1,115 @@
+﻿@model SOFTFISIO.DATA.Models.Empresa
+
+@{
+    ViewData["Title"] = "Excluir Empresa";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow border-danger">
+
+        <div class="card-header bg-danger text-white">
+            <h4>Excluir Empresa</h4>
+        </div>
+
+        <div class="card-body">
+
+            <div class="alert alert-danger">
+
+                <h5>
+                    Tem certeza que deseja excluir esta empresa?
+                </h5>
+
+                <p>
+                    Esta operação não poderá ser desfeita.
+                </p>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <label class="fw-bold">Razão Social</label>
+                    <div class="form-control bg-light">
+                        @Model.RazaoSocial
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="fw-bold">Nome Fantasia</label>
+                    <div class="form-control bg-light">
+                        @Model.NomeFantasia
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4 mb-3">
+                    <label class="fw-bold">CNPJ</label>
+                    <div class="form-control bg-light">
+                        @Model.CNPJ
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label class="fw-bold">Telefone</label>
+                    <div class="form-control bg-light">
+                        @Model.Telefone
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label class="fw-bold">Email</label>
+                    <div class="form-control bg-light">
+                        @Model.Email
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-8 mb-3">
+                    <label class="fw-bold">Endereço</label>
+                    <div class="form-control bg-light">
+                        @Model.Endereco
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label class="fw-bold">Cidade</label>
+                    <div class="form-control bg-light">
+                        @Model.Cidade / @Model.Estado
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card-footer">
+
+            <form asp-action="DeleteConfirmed">
+
+                <input type="hidden"
+                       asp-for="IdEmpresa" />
+
+                <button type="submit"
+                        class="btn btn-danger">
+                    Confirmar Exclusão
+                </button>
+
+                <a asp-action="Index"
+                   class="btn btn-secondary">
+                    Cancelar
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

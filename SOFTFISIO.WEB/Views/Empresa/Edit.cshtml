@@ -1,4 +1,143 @@
-﻿@page
-@model SOFTFISIO.WEB.Views.Empresa.EditModel
+﻿@model SOFTFISIO.DATA.Models.Empresa
+
 @{
+    ViewData["Title"] = "Editar Empresa";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-warning text-dark">
+            <h4>Editar Empresa</h4>
+        </div>
+
+        <div class="card-body">
+
+            <form asp-action="Edit">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <input type="hidden" asp-for="IdEmpresa" />
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="RazaoSocial" class="form-label"></label>
+                        <input asp-for="RazaoSocial" class="form-control" />
+                        <span asp-validation-for="RazaoSocial" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="NomeFantasia" class="form-label"></label>
+                        <input asp-for="NomeFantasia" class="form-control" />
+                        <span asp-validation-for="NomeFantasia" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="CNPJ" class="form-label"></label>
+                        <input asp-for="CNPJ" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="InscricaoEstadual" class="form-label"></label>
+                        <input asp-for="InscricaoEstadual" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="Telefone" class="form-label"></label>
+                        <input asp-for="Telefone" class="form-control" />
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Email" class="form-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Site" class="form-label"></label>
+                        <input asp-for="Site" class="form-control" />
+                    </div>
+
+                </div>
+
+                <hr />
+
+                <h5>Endereço</h5>
+
+                <div class="row">
+
+                    <div class="col-md-2 mb-3">
+                        <label asp-for="CEP" class="form-label"></label>
+                        <input asp-for="CEP" class="form-control" />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Endereco" class="form-label"></label>
+                        <input asp-for="Endereco" class="form-control" />
+                    </div>
+
+                    <div class="col-md-2 mb-3">
+                        <label asp-for="Numero" class="form-label"></label>
+                        <input asp-for="Numero" class="form-control" />
+                    </div>
+
+                    <div class="col-md-2 mb-3">
+                        <label asp-for="Complemento" class="form-label"></label>
+                        <input asp-for="Complemento" class="form-control" />
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="Bairro" class="form-label"></label>
+                        <input asp-for="Bairro" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="Cidade" class="form-label"></label>
+                        <input asp-for="Cidade" class="form-control" />
+                    </div>
+
+                    <div class="col-md-2 mb-3">
+                        <label asp-for="Estado" class="form-label"></label>
+                        <input asp-for="Estado" class="form-control" />
+                    </div>
+
+                </div>
+
+                <div class="mt-4">
+
+                    <button type="submit" class="btn btn-warning">
+                        Atualizar
+                    </button>
+
+                    <a asp-action="Index" class="btn btn-secondary">
+                        Voltar
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

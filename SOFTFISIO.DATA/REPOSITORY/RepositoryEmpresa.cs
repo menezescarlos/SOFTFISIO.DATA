@@ -1,4 +1,5 @@
-﻿using SOFTFISIO.DATA.INTERFACE;
+﻿using Microsoft.EntityFrameworkCore;
+using SOFTFISIO.DATA.INTERFACE;
 using SOFTFISIO.DATA.Models;
 using System;
 using System.Collections.Generic;

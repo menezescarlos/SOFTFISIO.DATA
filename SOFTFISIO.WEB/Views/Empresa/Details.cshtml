@@ -1,0 +1,211 @@
+﻿@model SOFTFISIO.DATA.Models.Empresa
+
+@{
+    ViewData["Title"] = "Detalhes da Empresa";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div id="area-impressao">
+
+        <div class="card-header bg-info text-white">
+            <h4>Detalhes da Empresa</h4>
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <label class="fw-bold">Razão Social</label>
+                    <div class="form-control bg-light">
+                        @Model.RazaoSocial
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="fw-bold">Nome Fantasia</label>
+                    <div class="form-control bg-light">
+                        @Model.NomeFantasia
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4 mb-3">
+                    <label class="fw-bold">CNPJ</label>
+                    <div class="form-control bg-light">
+                        @Model.CNPJ
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label class="fw-bold">Inscrição Estadual</label>
+                    <div class="form-control bg-light">
+                        @Model.InscricaoEstadual
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label class="fw-bold">Telefone</label>
+                    <div class="form-control bg-light">
+                        @Model.Telefone
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <label class="fw-bold">E-mail</label>
+                    <div class="form-control bg-light">
+                        @Model.Email
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="fw-bold">Site</label>
+                    <div class="form-control bg-light">
+                        @Model.Site
+                    </div>
+                </div>
+
+            </div>
+
+            <hr />
+
+            <h5>Endereço</h5>
+
+            <div class="row">
+
+                <div class="col-md-2 mb-3">
+                    <label class="fw-bold">CEP</label>
+                    <div class="form-control bg-light">
+                        @Model.CEP
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="fw-bold">Endereço</label>
+                    <div class="form-control bg-light">
+                        @Model.Endereco
+                    </div>
+                </div>
+
+                <div class="col-md-2 mb-3">
+                    <label class="fw-bold">Número</label>
+                    <div class="form-control bg-light">
+                        @Model.Numero
+                    </div>
+                </div>
+
+                <div class="col-md-2 mb-3">
+                    <label class="fw-bold">Complemento</label>
+                    <div class="form-control bg-light">
+                        @Model.Complemento
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4 mb-3">
+                    <label class="fw-bold">Bairro</label>
+                    <div class="form-control bg-light">
+                        @Model.Bairro
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label class="fw-bold">Cidade</label>
+                    <div class="form-control bg-light">
+                        @Model.Cidade
+                    </div>
+                </div>
+
+                <div class="col-md-2 mb-3">
+                    <label class="fw-bold">Estado</label>
+                    <div class="form-control bg-light">
+                        @Model.Estado
+                    </div>
+                </div>
+
+            </div>
+
+            <hr />
+
+            <div class="row">
+
+                <div class="col-md-4 mb-3">
+                    <label class="fw-bold">Código da Empresa</label>
+                    <div class="form-control bg-light">
+                        @Model.IdEmpresa
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label class="fw-bold">Data de Cadastro</label>
+                    <div class="form-control bg-light">
+                            @if (Model.DataCadastro.HasValue)
+                            {
+                                @Model.DataCadastro.Value.ToString("dd/MM/yyyy")
+                            }
+                            else
+                            {
+                                <span class="text-danger">
+                                    Data não encontrada
+                                </span>
+                            }
+                    </div>
+                </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card-footer">
+
+            <a asp-action="Edit"
+               asp-route-id="@Model.IdEmpresa"
+               class="btn btn-warning">
+                Editar
+            </a>
+
+            <button type="button"
+                    class="btn btn-primary"
+                    onclick="imprimirEmpresa()">
+                Imprimir
+            </button>
+
+
+            <a asp-action="Index"
+               class="btn btn-secondary">
+                Voltar
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+    @section Scripts{
+
+        <script>
+
+            function imprimirEmpresa() {
+
+                window.print();
+
+            }
+
+        </script>
+
+    }

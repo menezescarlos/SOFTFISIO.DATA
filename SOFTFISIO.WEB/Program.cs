@@ -9,6 +9,8 @@ builder.Services.AddControllersWithViews();
 // Configuração do Entity Framework Core
 builder.Services.AddScoped<IRepositoryEmpresa, RepositoryEmpresa>();
 
+builder.Services.AddScoped<IRepositoryCooperativa, RepositoryCooperativa>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
