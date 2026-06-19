@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "sqlproj: Build datafisio",
+			"type": "process",
+			"command": "dotnet",
+			"args": [
+				"build",
+				"f:/SOFTFISIO/SOFTFISIO.DATA/datafisio/datafisio.sqlproj"
+			],
+			"problemMatcher": "$sqlproj-problem-matcher",
+			"isBackground": true,
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "Builds the datafisio SQL project"
+		}
+	]
+}

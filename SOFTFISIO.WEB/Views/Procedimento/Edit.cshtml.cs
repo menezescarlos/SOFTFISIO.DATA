@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace SOFTFISIO.WEB.Views.Equipamento
+namespace SOFTFISIO.WEB.Views.Procedimento
 {
     public class EditModel : PageModel
     {
